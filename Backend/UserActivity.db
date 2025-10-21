@@ -1,0 +1,40 @@
+{
+  "name": "UserActivity",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User email"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "User full name"
+    },
+    "activity_type": {
+      "type": "string",
+      "enum": [
+        "signup",
+        "order_created",
+        "payment_success",
+        "payment_failed"
+      ],
+      "description": "Type of activity"
+    },
+    "signup_method": {
+      "type": "string",
+      "description": "Google OAuth or Email"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional activity data"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "User IP if available"
+    }
+  },
+  "required": [
+    "user_email",
+    "activity_type"
+  ]
+}

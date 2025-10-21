@@ -1,0 +1,118 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string",
+      "description": "Unique order number"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Buyer email"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Buyer name"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_title": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          },
+          "total": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Order items"
+    },
+    "subtotal": {
+      "type": "number",
+      "description": "Subtotal before taxes"
+    },
+    "discount": {
+      "type": "number",
+      "description": "Total discount applied"
+    },
+    "tax": {
+      "type": "number",
+      "description": "Tax amount"
+    },
+    "shipping": {
+      "type": "number",
+      "description": "Shipping cost"
+    },
+    "total": {
+      "type": "number",
+      "description": "Final total"
+    },
+    "shipping_address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "pincode": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      }
+    },
+    "payment_method": {
+      "type": "string",
+      "description": "Payment method used"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "processing",
+        "success",
+        "failed"
+      ],
+      "default": "pending"
+    },
+    "order_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "processing",
+        "shipped",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "transaction_id": {
+      "type": "string",
+      "description": "Payment transaction ID"
+    }
+  },
+  "required": [
+    "user_email",
+    "items",
+    "total",
+    "payment_method"
+  ]
+}

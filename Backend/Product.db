@@ -1,0 +1,91 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Smartphones",
+        "Smartwatches",
+        "TVs",
+        "Refrigerators",
+        "Chairs",
+        "Tables",
+        "Beds",
+        "Bags",
+        "Clothes - Boys",
+        "Clothes - Girls",
+        "Tablets",
+        "Sports",
+        "Kids",
+        "Gym Products"
+      ],
+      "description": "Product category"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand name"
+    },
+    "price": {
+      "type": "number",
+      "description": "Original price"
+    },
+    "discount_percentage": {
+      "type": "number",
+      "description": "Discount percentage if any",
+      "default": 0
+    },
+    "final_price": {
+      "type": "number",
+      "description": "Price after discount"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "specifications": {
+      "type": "object",
+      "description": "Technical specifications"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Stock keeping unit"
+    },
+    "stock_quantity": {
+      "type": "number",
+      "description": "Available stock"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Main product image"
+    },
+    "additional_images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional product images"
+    },
+    "offer_text": {
+      "type": "string",
+      "description": "Special offer text"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Featured product"
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "brand",
+    "price",
+    "sku",
+    "stock_quantity"
+  ]
+}
